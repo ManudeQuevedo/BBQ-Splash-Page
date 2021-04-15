@@ -2,8 +2,6 @@
 
 * {
    box-sizing: border-box;
-   margin: 0;
-   padding: 0;
 }
 
 body {
@@ -22,7 +20,7 @@ h1 {
    font-size: 2.25rem;
    font-weight: 300;
    color: #fff;
-   margin: 2em 0;
+   margin: 0;
 }
 
 h1 + p {
@@ -71,9 +69,6 @@ strong {
    background-size: cover;
    background-color: #404040;
    background-position: center;
-   padding: 0 0.5em 2em;
-   display: flex;
-   flex-direction: column;
 }
 
 /* =================
@@ -84,11 +79,33 @@ strong {
    padding: 2em 1em;
 }
 
+/* Solution 1 */
+/* .intro > *,
+.main-content > * {
+   max-width: 400px;
+   margin-left: auto;
+   margin-right: auto;
+} */
+
+/* Solution 2 */
+.container {
+   max-width: 500px;
+   margin: 0 auto;
+}
+
+.container-intro {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   min-height: 50vh;
+   padding: 0 0.5em 2em;
+}
+
 /* =================
    media queries
    ================= */
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
    body {
       font-size: 1.125rem;
       display: flex;
@@ -107,5 +124,15 @@ strong {
    .main-content {
       width: 50%;
       min-height: 100vh;
+   }
+
+   .main-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .container-intro {
+      height: 100%;
    }
 }
